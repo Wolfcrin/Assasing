@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>System_Habilidades</name>
+    <events>
+        <include>Multi_Shuriken</include>
+        <variable constant="0" name="Ultima_Habilidad" sid="758883957336457" static="0" type="number">0</variable>
+        <include>Shuriken</include>
+        <include>Boomerang</include>
+        <variable constant="0" name="hab_Num" sid="269749010235868" static="0" type="number">-1</variable>
+        <event-block sid="281357957320920">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="495419828155049" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="838351997019636" type="SkillButton">
+                    <param id="0" name="Instance variable">Cooldown</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="336571889279795" type="SkillButton">
+                    <param id="0" name="Instance variable">Activa</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="387033179631005" type="SkillButton">
+                    <param id="0" name="Instance variable">sTime</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="408023004261459" type="SkillButton">
+                    <param id="0" name="Instance variable">Cooldown</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="703364039305998" type="Function">
+                    <param id="0" name="Name">SkillButton.Habilidad</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>We also init the text timer (txtSkillTimer) and the SkillCover image (making them visible, at the correct positions and starting dimensions/text)</comment>
+                <event-block sid="541072755845854">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="342393552736142" type="SkillCover">
+                            <param id="0" name="Instance variable">UIDPadre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SkillButton.UID</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="124167493222864" type="txtSkillTimer">
+                            <param id="0" name="Instance variable">uidPadre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SkillButton.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="874421360683981" type="txtSkillTimer">
+                            <param id="0" name="Object">SkillButton</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="886388031374308" type="txtSkillTimer">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">SkillButton</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="670577436791954" type="txtSkillTimer">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="214035167759906" type="txtSkillTimer">
+                            <param id="0" name="Width">SkillButton.Width</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="955903138960329" type="SkillCover">
+                            <param id="0" name="Height">SkillButton.Height</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="607874892818974" type="SkillCover">
+                            <param id="0" name="Object">SkillButton</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="714706112645514" type="SkillCover">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="667037299999184" type="SkillCover">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">txtSkillTimer</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Every tick we check if each SkillButton &quot;Cooldown&quot; is true. &#x0D;&#x0A;If so, we add &quot;dt&quot; to the current SkillButton.&quot;sTime&quot;.&#x0D;&#x0A;We also change the Height of the SkillCover image. Setting it to a fraction of its maximum width in relation to the current value of &quot;sTime&quot;.&#x0D;&#x0A;We also display the correct remaining cooldown time in the txtSkillTimer text object.</comment>
+        <event-block sid="153876051862945">
+            <conditions>
+                <condition id="-11" name="For Each" sid="892118173624147" type="System">
+                    <param id="0" name="Object">SkillButton</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="741919418947281" type="SkillButton">
+                    <param id="0" name="Instance variable">Cooldown</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="549044474836151" type="SkillButton">
+                    <param id="0" name="Instance variable">sTime</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="328841269704837">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="276023104922423" type="SkillCover">
+                            <param id="0" name="Instance variable">UIDPadre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SkillButton.UID</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="255581695499896" type="txtSkillTimer">
+                            <param id="0" name="Instance variable">uidPadre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SkillButton.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="343965547333496" type="txtSkillTimer">
+                            <param id="0" name="Text">mid(str(SkillButton.sEndTime - SkillButton.sTime),0,3)</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="126796166225938" type="SkillCover">
+                            <param id="0" name="Height">SkillButton.Height - ((SkillButton.Height / SkillButton.sEndTime) * SkillButton.sTime)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>When &quot;sTime&quot; is superior or equal to &quot;sEndTime&quot; the cooldown is complete.&#x0D;&#x0A;So we set &quot;Cooldown&quot; to false this way event 3 won&apos;t be true and won&apos;t execute.&#x0D;&#x0A;TxtSkillTimer and SkillCover are hidden.</comment>
+                <event-block sid="814119748412877">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="755864123763472" type="SkillButton">
+                            <param id="0" name="Instance variable">sTime</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">self.sEndTime</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="395964626732235" type="SkillButton">
+                            <param id="0" name="Instance variable">sTime</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="463365194654278" type="SkillButton">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="253454690174661">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="877377675973423" type="SkillCover">
+                                    <param id="0" name="Instance variable">UIDPadre</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">SkillButton.UID</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="612890665482723" type="txtSkillTimer">
+                                    <param id="0" name="Instance variable">uidPadre</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">SkillButton.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="156219106316575" type="txtSkillTimer">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="888899014346276" type="SkillCover">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="434007383013967">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="280672574041395" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="648546046823152" type="System">
+                    <param id="0" name="Variable">hab_Num</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="510055524651792" type="SkillButton">
+                    <param id="0" name="Instance variable">Activa</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="323929814705690">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="430000577703577" type="System">
+                            <param id="0" name="Variable">hab_Num</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">SkillButton.AnimationFrameCount</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="477501194619230" type="System">
+                            <param id="0" name="Variable">hab_Num</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="848734821805960">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="105184107104934" type="System">
+                            <param id="0" name="Object">SkillButton</param>
+                            <param id="1" name="Expression">SkillButton.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Ultima_Habilidad</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="642286398938022" type="Function">
+                            <param id="0" name="Name">SkillButton.Destructor</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="143357976822823">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="466819566594871" type="System">
+                            <param id="0" name="Object">SkillButton</param>
+                            <param id="1" name="Expression">SkillButton.AnimationFrame</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">hab_Num</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="236977422137602" type="SkillButton">
+                            <param id="0" name="Instance variable">Activa</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="189075165998687" type="Function">
+                            <param id="0" name="Name">SkillButton.Inicilizador</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="537913455200965" type="System">
+                            <param id="0" name="Variable">Ultima_Habilidad</param>
+                            <param id="1" name="Value">SkillButton.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="561588324929282">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="446097793773058" type="System">
+                            <param id="0" name="Object">SkillButton</param>
+                            <param id="1" name="Expression">SkillButton.Letra_Rapida</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">&quot;Q&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="193965722519932">
+            <conditions>
+                <condition id="-18" name="On created" sid="537163143720315" type="SkillButton" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="231430701283118" type="SkillButton">
+                    <param id="0" name="Object">SkillCover</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="553864962223794" type="SkillCover">
+                    <param id="0" name="Instance variable">UIDPadre</param>
+                    <param id="1" name="Value">SkillButton.UID</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="397195333795801" type="SkillButton">
+                    <param id="0" name="Object">txtSkillTimer</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="598699226583158" type="txtSkillTimer">
+                    <param id="0" name="Instance variable">uidPadre</param>
+                    <param id="1" name="Value">SkillButton.UID</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="565219338680607" type="SkillCover">
+                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="772978744604147" type="txtSkillTimer">
+                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="805563299699409" type="SkillCover">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="144235899109459" type="txtSkillTimer">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

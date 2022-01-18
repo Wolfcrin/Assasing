@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>NPC</name>
+    <events>
+        <event-group description="" sid="729708290605232" title="Hablar">
+            <sub-events>
+                <event-block sid="577398341245634">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="418649401246465" type="System">
+                            <param id="0" name="First value">distance(personaje.X,personaje.Y,npc.X,npc.Y)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">150</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="201664442466120" type="globoMensaje">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="207247817437690">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="367235570478007" type="Keyboard">
+                                    <param id="0" name="Key">69 (E)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="896757104444134">
+                                    <conditions>
+                                        <condition id="-9" name="Is visible" sid="541901966542999" type="globoMensaje" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="297091396799856" type="globoMensaje">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-13" name="Set time scale" sid="372250948206879" type="System">
+                                            <param id="0" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="631484551870287" type="System">
+                                            <param id="0" name="Variable">juegoEnPause</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="837959403542861" type="NPC">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="688472363986653" type="mensaje">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="761358250867427" type="lbl_lo_quedice">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="140653964292259">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="852147760590441" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="908082278896967" type="globoMensaje">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-13" name="Set time scale" sid="199624174585950" type="System">
+                                            <param id="0" name="Time scale">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="981565775987784" type="System">
+                                            <param id="0" name="Variable">juegoEnPause</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="173645336770614" type="mensaje">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="343506616535458" type="lbl_lo_quedice">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="344867883484879">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="813491258954103" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="522650477521236" type="globoMensaje">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="414524722891144" type="globoMensaje">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="719196257086643">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="358281951634828" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-24" name="Move to top" sid="771411531157348" type="txt_TextoNpc" />
+                        <action id="-15" name="Set visible" sid="529072323639270" type="mensaje">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="848863373661723" type="lbl_lo_quedice">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="919052324475644" type="mensaje">
+                            <param id="0" name="X">620</param>
+                            <param id="1" name="Y">704</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="331320033109555" type="lbl_lo_quedice">
+                            <param id="0" name="Object">mensaje</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="232814377214485" type="lbl_lo_quedice" />
+                    </actions>
+                </event-block>
+                <event-block sid="552703542987852">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="798253384821820" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="391333561033711" type="globoMensaje">
+                            <param id="0" name="Object">NPC</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

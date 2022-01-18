@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Huevos_Buscar</name>
+    <events>
+        <variable constant="0" name="posArray" sid="937239888442925" static="0" type="number">-1</variable>
+        <variable constant="0" name="cantHuevos" sid="903789791810063" static="0" type="number">7</variable>
+        <event-group description="" sid="515786059265399" title="Buscar_Huevo">
+            <sub-events>
+                <event-block sid="852823701296441">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="224260274772735" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="269084919017925" type="huevosIcons" />
+                        <action id="0" name="Clear" sid="999251075907355" type="arHuevos" />
+                        <action id="5" name="Set frame" sid="132927157178140" type="huevos">
+                            <param id="0" name="Frame number">huevos.IID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="858664531804782" type="Function">
+                            <param id="0" name="Name">&quot;crearHuevos&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="huevoNum" sid="483935034206028" static="0" type="number">0</variable>
+                        <event-block sid="629968682878736">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="831158754624613" type="System">
+                                    <param id="0" name="Object">huevos</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="333275863670284" type="huevos">
+                                    <param id="0" name="Frame number">huevoNum</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="271781666552491" type="huevos">
+                                    <param id="0" name="Instance variable">posicion</param>
+                                    <param id="1" name="Value">huevoNum</param>
+                                </action>
+                                <action id="0" name="Call function" sid="457352839600497" type="Function">
+                                    <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                                    <param id="1" name="Parameter {n}">huevoNum</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="805534857558056" type="System">
+                                    <param id="0" name="Variable">huevoNum</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="797290288734114">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="630805518979894" type="personaje">
+                            <param id="0" name="Object">huevos</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="515048632174485" type="huevos" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="885351071747228" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="490292616087237" type="arHuevos">
+                            <param id="0" name="X">posArray</param>
+                            <param id="1" name="Value">huevos.AnimationFrame</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="194350203567961" type="huevos">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="261945732010551" type="System">
+                            <param id="0" name="Variable">posArray</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="717564306653520">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="324616735054901" type="System">
+                                    <param id="0" name="Object">huevosIcons</param>
+                                    <param id="1" name="Expression">huevosIcons.posicion</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">posArray</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="188706030599174" type="huevosIcons">
+                                    <param id="0" name="Frame number">huevos.AnimationFrame</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="817720899144493" type="huevosIcons">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="227396784377908">
+                    <conditions>
+                        <condition id="0" name="On function" sid="600734322789621" type="Function">
+                            <param id="0" name="Name">&quot;crearHuevos&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="530979837757739">
+                            <conditions>
+                                <condition id="-10" name="For" sid="790363040354300" type="System">
+                                    <param id="0" name="Name">&quot;fX&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">cantHuevos - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="374445479237885" type="System">
+                                    <param id="0" name="Object to create">huevosIcons</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">126 + huevosIcons.Width * loopindex(&quot;fX&quot;) + 10</param>
+                                    <param id="3" name="Y">25</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="619752331681228" type="huevosIcons">
+                                    <param id="0" name="Width">43</param>
+                                    <param id="1" name="Height">43</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="382073208748112" type="huevosIcons">
+                                    <param id="0" name="Instance variable">posicion</param>
+                                    <param id="1" name="Value">loopindex(&quot;fX&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="834721824527653">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="423704327139599" type="Colision">
+                            <param id="0" name="Object">shasky</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="815700032345452" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="242752972652148" type="System">
+                            <param id="0" name="Variable">posArray</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="frame" sid="856105584338332" static="0" type="number">0</variable>
+                        <event-block sid="624255461000312">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="309653767709379" type="System">
+                                    <param id="0" name="Object">huevosIcons</param>
+                                    <param id="1" name="Expression">huevosIcons.posicion =  posArray</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="758140153112792" type="System">
+                                    <param id="0" name="Variable">frame</param>
+                                    <param id="1" name="Value">huevosIcons.AnimationFrame</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="856486631330756" type="huevosIcons">
+                                    <param id="0" name="Frame number">7</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="525461816818452" type="huevosIcons">
+                                    <param id="0" name="Opacity">30</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="818809423054392">
+                                    <conditions>
+                                        <condition id="-34" name="Pick by evaluate" sid="985323535248990" type="System">
+                                            <param id="0" name="Object">huevos</param>
+                                            <param id="1" name="Expression">huevos.AnimationFrame =  frame</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="756353720007832" type="huevos">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="245118785313328" type="Function">
+                                            <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                                            <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="909932847984653">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="219538041009128" type="Colision">
+                                    <param id="0" name="Instance variable">puedeColisionar</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="797684245595537" type="personaje">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="365408263410253" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="887388102678358" type="Colision">
+                                    <param id="0" name="Instance variable">puedeColisionar</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="108685357791442" type="personaje">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="640331114049649">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="516622020808746" type="System">
+                                    <param id="0" name="Variable">posArray</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="570450812942302" type="System">
+                                    <param id="0" name="Variable">posArray</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="895197743414786">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="179118091557475" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="803787787609404" type="personaje" />
+                    </actions>
+                </event-block>
+                <event-block sid="576201395467663">
+                    <conditions>
+                        <condition id="0" name="On function" sid="425502044644053" type="Function">
+                            <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="696444689101067">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="919256436935753" type="System">
+                                    <param id="0" name="Object">huevos</param>
+                                    <param id="1" name="Expression">huevos.AnimationFrame = Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="135756245256194" type="huevos">
+                                    <param id="0" name="X">random(personaje.Width,LayoutWidth-personaje.Width)</param>
+                                    <param id="1" name="Y">random(personaje.Height,LayoutHeight -personaje.Height)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="417837604630018">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="429259286116617" type="huevos">
+                            <param id="0" name="Object">ObjEscenarios</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="248953672050782" type="Function">
+                            <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                            <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="957596529856154">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="563054696020378" type="huevos">
+                            <param id="0" name="Object">huevos</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="548080218983964" type="Function">
+                            <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                            <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="856893982542204">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="970694242632795" type="System">
+                            <param id="0" name="Variable">posArray</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="378097123022445" type="Ganaste">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="463712477841159" type="Ganaste">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="135527776792795" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="830616087129033" type="txt_reiniciando">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="102482141070773" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="894748266143288" type="txt_reiniciando">
+                            <param id="0" name="Text">&quot;Reiniciando en 2&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="313327391067791" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="374775760484169" type="txt_reiniciando">
+                            <param id="0" name="Text">&quot;Reiniciando en 1&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="338813548553471" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="222699433945391" type="System" />
+                        <action id="-26" name="Restart layout" sid="908114749687399" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="375081349834784">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="827606249315951" type="Colision">
+                            <param id="0" name="Object">shasky</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="149644487104428" type="System">
+                            <param id="0" name="Variable">posArray</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="421392912164252" type="Ganaste">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="494001685630171" type="Ganaste">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="246314651541576" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="703927609921750" type="txt_reiniciando">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="518983671737359" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="785916999203503" type="txt_reiniciando">
+                            <param id="0" name="Text">&quot;Reiniciando en 2&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="565737439073616" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="726379254894645" type="txt_reiniciando">
+                            <param id="0" name="Text">&quot;Reiniciando en 1&quot;</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="340854919143229" type="System" />
+                        <action id="-26" name="Restart layout" sid="321796399959829" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

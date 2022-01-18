@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Inicio</layout>
+        <event-sheet order="1">Personaje_Mouse</event-sheet>
+        <event-sheet order="2">Inicio</event-sheet>
+        <event-sheet order="3">AI_Patrullar</event-sheet>
+        <event-sheet order="4">AI_SeguirPJ</event-sheet>
+        <event-sheet active="1" order="5">System_Habilidades</event-sheet>
+        <event-sheet order="6">Invocar</event-sheet>
+        <event-sheet order="7">Moustros_Default</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="Moustros" />
+        <family expanded="0" name="ObjEscenarios" />
+        <family expanded="1" name="Proyectiles_Personaje" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/Obstaculos/" />
+        <folder expanded="0" path="object-folder/Escenario/" />
+        <folder expanded="0" path="object-folder/Bichos/" />
+        <folder expanded="1" path="object-folder/Funcionales/" />
+        <folder expanded="0" path="object-folder/Iconos/" />
+        <folder expanded="0" path="object-folder/Personaje/" />
+        <folder expanded="0" path="object-folder/Objetos/" />
+        <folder expanded="0" path="object-folder/UI/" />
+        <folder expanded="0" path="object-folder/Fondo/" />
+        <folder expanded="1" path="object-folder/tolmik sprites/" />
+        <folder expanded="0" path="object-folder/Disparos/" />
+        <folder expanded="1" path="object-folder/NPC/" />
+        <folder expanded="1" path="object-folder/Particles/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="event-folder/Habilidades/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="0" path="file-folder/Spriter animations/" />
+        <folder expanded="1" path="animation-folder/blockRoca/" />
+        <folder expanded="1" path="animation-folder/blockTronco/" />
+        <folder expanded="1" path="animation-folder/blockArbol/" />
+        <folder expanded="1" path="animation-folder/arbol/" />
+        <folder expanded="1" path="animation-folder/fuenteFlotante/" />
+        <folder expanded="1" path="animation-folder/granRoca/" />
+        <folder expanded="1" path="animation-folder/hongo/" />
+        <folder expanded="1" path="animation-folder/sombre/" />
+        <folder expanded="1" path="animation-folder/tronco/" />
+        <folder expanded="1" path="animation-folder/shasky/" />
+        <folder expanded="1" path="animation-folder/murcielago/" />
+        <folder expanded="1" path="animation-folder/alerta/" />
+        <folder expanded="1" path="animation-folder/eyes/" />
+        <folder expanded="1" path="animation-folder/huevosIcons/" />
+        <folder expanded="1" path="animation-folder/vision/" />
+        <folder expanded="1" path="animation-folder/visionlost/" />
+        <folder expanded="1" path="animation-folder/Colision/" />
+        <folder expanded="1" path="animation-folder/personaje/" />
+        <folder expanded="1" path="animation-folder/huevos/" />
+        <folder expanded="1" path="animation-folder/boton/" />
+        <folder expanded="1" path="animation-folder/button/" />
+        <folder expanded="1" path="animation-folder/fondo_ayuda/" />
+        <folder expanded="1" path="animation-folder/fondo_mensajeLargo/" />
+        <folder expanded="1" path="animation-folder/Ganaste/" />
+        <folder expanded="1" path="animation-folder/globoMensaje/" />
+        <folder expanded="1" path="animation-folder/mensaje/" />
+        <folder expanded="1" path="animation-folder/raya/" />
+        <folder expanded="1" path="animation-folder/disparo/" />
+        <folder expanded="1" path="animation-folder/NPC/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/SkillButton/" />
+        <folder expanded="1" path="animation-folder/SkillCover/" />
+        <folder expanded="1" path="animation-folder/Proj/" />
+        <folder expanded="1" path="animation-folder/ProjImage/" />
+        <folder expanded="1" path="animation-folder/ProjImage2/" />
+        <folder expanded="1" path="animation-folder/Hand/" />
+        <folder expanded="1" path="animation-folder/Boomerang/" />
+        <folder expanded="1" path="animation-folder/Target/" />
+    </folders-expanded>
+</c2uistate>

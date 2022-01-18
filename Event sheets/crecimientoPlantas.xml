@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>crecimientoPlantas</name>
+    <events>
+        <event-group description="" sid="703004197303712" title="Crecimiento_Plantas">
+            <sub-events>
+                <variable constant="0" name="cantHongosACrear" sid="165903053033277" static="0" type="number">100</variable>
+                <variable constant="0" name="veloCrecimiento" sid="430217727359547" static="0" type="number">0.02</variable>
+                <event-block disabled="1" sid="591077432208654">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="455916841691835" type="hongo" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="856545428276935" type="hongo">
+                            <param id="0" name="Instance variable">crecimiento</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="466806315964566" type="hongo">
+                            <param id="0" name="Scale">0.05</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="234449662454900">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="476388745833386" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="186776004180133">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="743811361731206" type="hongo">
+                                    <param id="0" name="Instance variable">crecimiento</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="201807879921490" type="hongo">
+                                    <param id="0" name="Scale">hongo.crecimiento</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="218009976690549" type="hongo">
+                                    <param id="0" name="Instance variable">crecimiento</param>
+                                    <param id="1" name="Value">veloCrecimiento</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="894422292310913">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="873099974579928" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="872955348859967" type="System">
+                            <param id="0" name="Variable">cantHongosACrear</param>
+                            <param id="1" name="Value">floor(random(cantHongosACrear))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="279526658684633">
+                            <conditions>
+                                <condition id="-10" name="For" sid="616713227126797" type="System">
+                                    <param id="0" name="Name">&quot;fxHongos&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">cantHongosACrear</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="450190993587485" type="System">
+                                    <param id="0" name="Object to create">hongo</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">random(LayoutWidth)</param>
+                                    <param id="3" name="Y">random(LayoutHeight)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

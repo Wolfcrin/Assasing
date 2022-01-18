@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Moustros_Default</name>
+    <events>
+        <event-block sid="178533703577165">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="425162300647066" type="Moustros">
+                    <param id="0" name="Instance variable">Vida</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="789099117828453" type="Moustros">
+                    <param id="0" name="Object">Moustros_Die</param>
+                    <param id="1" name="Layer">Moustros.LayerName</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="691158921963159" type="Moustros" />
+            </actions>
+        </event-block>
+        <event-block sid="229745768656613">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="703678166318124" type="Moustros">
+                    <param id="0" name="Object">Proyectiles_Personaje</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="402768516283132" type="Moustros">
+                    <param id="0" name="Instance variable">Vida</param>
+                    <param id="1" name="Value">Proyectiles_Personaje.danioProduce</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Disparos</name>
+    <events>
+        <event-block disabled="1" sid="632149611267819">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="432715473631961" type="System" />
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="263829654326165" type="Particles">
+                    <param id="0" name="Angle">disparo.Angle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="231788383982763">
+            <conditions>
+                <condition id="-18" name="On created" sid="238878207729708" type="disparo" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Spawn another object" sid="304711319989131" type="disparo">
+                    <param id="0" name="Object">Particles</param>
+                    <param id="1" name="Layer">disparo.AnimationName</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="561009410274499" type="disparo">
+                    <param id="0" name="Angle">angle(personaje.ImagePointX(2),personaje.ImagePointY(2),mouse.X,mouse.Y)</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="181550131772509" type="Particles">
+                    <param id="0" name="Object">disparo</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="785887513031114" type="Particles">
+                    <param id="0" name="Pin to">disparo</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

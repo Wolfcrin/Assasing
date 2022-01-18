@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>FPS</name>
+    <events>
+        <event-block sid="315158135624617">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="909695904531728" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="699680219262959" type="txtFPS">
+                    <param id="0" name="Text">&quot;FPS:&quot;&amp;fps</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

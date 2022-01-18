@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Inicio</name>
+    <events>
+        <include>Moustros_Default</include>
+        <include>Invocar</include>
+        <include>Personaje_Mouse</include>
+        <include>System_Habilidades</include>
+        <include>NPC</include>
+        <variable constant="0" name="juegoEnPause" sid="970509157443711" static="0" type="number">0</variable>
+        <include>Personaje</include>
+        <include>lineasSuelo</include>
+        <include>Huevos_Buscar</include>
+        <include>AI_SeguirPJ</include>
+        <include>FPS</include>
+        <include>crecimientoPlantas</include>
+        <include>Sombra</include>
+        <include>AI_Patrullar</include>
+        <include>CreacionesBlock</include>
+        <event-block sid="873744500677802">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="873359114998128" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Sort all Objects in layer by Y" sid="867196080908334" type="ZSorter">
+                    <param id="0" name="Layer">&quot;personaje&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="844241830525666">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="125719380410792" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="509744990880307" type="Colision">
+                    <param id="0" name="Pin to">personaje</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="213596219164117" type="Colision">
+                    <param id="0" name="Object">personaje</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="5" name="Set web font" sid="332167572470513" type="lbl_lo_quedice">
+                    <param id="0" name="Family name">&quot;mv_boliregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;boli.css&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="708155492468978" type="text_ayuda">
+                    <param id="0" name="Text">&quot;Movimiento: &quot;&amp;newline&amp;&quot;A:Izquierda&quot;&amp;newline&amp;&quot;S:Abajo&quot;&amp;newline&amp;&quot;W:Arriba&quot;&amp;newline&amp;&quot;D:Derecha&quot;&amp;newline&amp;&quot;H: Invisible&quot;&amp;newline&amp;&quot;E: Hablar&quot;&amp;newline&amp;&quot;ESC: ir al menu&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="638163593982599" type="System">
+                    <param id="0" name="Variable">juegoEnPause</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="568909344002365">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="207214418669989" type="System">
+                    <param id="0" name="Variable">juegoEnPause</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="976692092472934" type="System">
+                    <param id="0" name="Group name">&quot;AI_Patrullar&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="804097515083309" type="System">
+                    <param id="0" name="Group name">&quot;AI_Seguir_Pj&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="189747148830884" type="System">
+                    <param id="0" name="Group name">&quot;Buscar_Huevo&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="382958702309724" type="System">
+                    <param id="0" name="Group name">&quot;Crecimiento_Plantas&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="294122432008281" type="System">
+                    <param id="0" name="Group name">&quot;Crecimiento_Plantas&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="155103454508689" type="System">
+                    <param id="0" name="Group name">&quot;Controles&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="478778097934130" type="fuenteFlotante">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Sine2" id="0" name="Set active" sid="343119904906881" type="fuenteFlotante">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="612533883803600">
+            <conditions>
+                <condition id="-22" name="Else" sid="586581374287981" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="360978879024722" type="System">
+                    <param id="0" name="Group name">&quot;AI_Patrullar&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="800045972818191" type="System">
+                    <param id="0" name="Group name">&quot;AI_Seguir_Pj&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="936008622732041" type="System">
+                    <param id="0" name="Group name">&quot;Buscar_Huevo&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="938148287726955" type="System">
+                    <param id="0" name="Group name">&quot;Crecimiento_Plantas&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="736473879862039" type="System">
+                    <param id="0" name="Group name">&quot;Crecimiento_Plantas&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="573294871131229" type="System">
+                    <param id="0" name="Group name">&quot;Controles&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="149158119778824" type="fuenteFlotante">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Sine2" id="0" name="Set active" sid="587522286441928" type="fuenteFlotante">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="792703627660511">
+            <conditions>
+                <condition id="1" name="On any click" sid="987444338065963" type="Mouse" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="208276666603234">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="524549855261506" type="fondo_ayuda" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="445182093854537" type="fondo_ayuda">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="928217776509395" type="text_ayuda">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="680012154257176" type="System">
+                            <param id="0" name="Variable">juegoEnPause</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

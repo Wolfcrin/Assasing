@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <event-block sid="666335203578376">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="356674184499212" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="369667316038559" type="lbl_lo_quedice">
+                    <param id="0" name="Family name">&quot;mv_boliregular&quot;</param>
+                    <param id="1" name="CSS URL">&quot;boli.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="703287441315514">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="209826004231456" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="752339704344471" type="System">
+                    <param id="0" name="Layout">&quot;Inicio&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

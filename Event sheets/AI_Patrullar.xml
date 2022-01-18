@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AI_Patrullar</name>
+    <events>
+        <event-group description="" sid="661917035615299" title="AI_Patrullar">
+            <sub-events>
+                <event-block sid="731886237067477">
+                    <conditions>
+                        <condition id="5" name="On any finished" sid="722079746005346" type="Moustros" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="325069987309629" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="580411263918934" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Value">floor(random(4))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="484163202680542">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="605114742870849" type="Moustros" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="699995089187868" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="206478809130304" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Value">floor(random(4))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="596909189463562">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="763504451010339" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="646914295719474" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="375431398187181" type="Moustros">
+                            <param id="0" name="Animation">&quot;down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="190415980281102" type="Moustros">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="397739879389800">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="441350418325378" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="568584678924727" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="212701318655579" type="Moustros">
+                            <param id="0" name="Animation">&quot;left&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="881874524839981" type="Moustros">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="119257182589696">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="207399536462835" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="477934487921340" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="803068162338922" type="Moustros">
+                            <param id="0" name="Animation">&quot;rigth&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="488891754612885" type="Moustros">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="461163236691919">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="840229186053611" type="Moustros">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="291856870607548" type="Moustros">
+                            <param id="0" name="Instance variable">seMuevePorPath</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="396557670607731" type="Moustros">
+                            <param id="0" name="Animation">&quot;up&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="972373723114946" type="Moustros">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

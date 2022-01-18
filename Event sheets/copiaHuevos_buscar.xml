@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>copiaHuevos_buscar</name>
+    <events>
+        <event-block sid="396784941178898">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="813503893917651" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="999211928040413" type="huevosIcons" />
+                <action id="0" name="Clear" sid="575145371495996" type="arHuevos" />
+                <action id="5" name="Set frame" sid="142645913854341" type="huevos">
+                    <param id="0" name="Frame number">huevos.IID</param>
+                </action>
+                <action id="0" name="Call function" sid="220869802009644" type="Function">
+                    <param id="0" name="Name">&quot;crearHuevos&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="huevoNum" sid="413429051614294" static="0" type="number">0</variable>
+                <event-block sid="344445369663667">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="278201097667461" type="System">
+                            <param id="0" name="Object">huevos</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="592101629144750" type="huevos">
+                            <param id="0" name="Frame number">huevoNum</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="966902665136967" type="huevos">
+                            <param id="0" name="Instance variable">posicion</param>
+                            <param id="1" name="Value">huevoNum</param>
+                        </action>
+                        <action id="0" name="Call function" sid="875278261105033" type="Function">
+                            <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                            <param id="1" name="Parameter {n}">huevoNum</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="603388289298598" type="System">
+                            <param id="0" name="Variable">huevoNum</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="807748415256687">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="715747926748577" type="personaje">
+                    <param id="0" name="Object">huevos</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="868528653624689" type="huevos" />
+                <condition id="-8" name="Is boolean instance variable set" sid="179730199094529" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="935833066588067" type="huevos">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="600717500758327">
+                    <conditions />
+                    <actions>
+                        <action id="5" name="Set frame" sid="870151330032279" type="huevosIcons">
+                            <param id="0" name="Frame number">huevos.AnimationFrame</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="284203430521036" type="huevosIcons">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="594382443862169">
+            <conditions>
+                <condition id="0" name="On function" sid="402226658673635" type="Function">
+                    <param id="0" name="Name">&quot;crearHuevos&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="179419065153105">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="639096961804104" type="System">
+                            <param id="0" name="Object to create">huevosIcons</param>
+                            <param id="1" name="Layer">&quot;UI&quot;</param>
+                            <param id="2" name="X">126 + huevosIcons.Width * loopindex(&quot;fX&quot;) + 10</param>
+                            <param id="3" name="Y">16</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="154851423926184" type="huevosIcons">
+                            <param id="0" name="Width">43</param>
+                            <param id="1" name="Height">43</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="869902252442940" type="huevosIcons">
+                            <param id="0" name="Instance variable">posicion</param>
+                            <param id="1" name="Value">loopindex(&quot;fX&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="757218297077892">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="556018207277647" type="Colision">
+                    <param id="0" name="Object">shasky</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="897319230263336" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="frame" sid="131460050158708" static="0" type="number">0</variable>
+                <event-block sid="315258021336600">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="419863535247438" type="System">
+                            <param id="0" name="Variable">frame</param>
+                            <param id="1" name="Value">huevosIcons.AnimationFrame</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="655317321195163" type="huevosIcons">
+                            <param id="0" name="Frame number">7</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="849730269428087" type="huevosIcons">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="531182164604041">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="670365602621921" type="System">
+                                    <param id="0" name="Object">huevos</param>
+                                    <param id="1" name="Expression">huevos.AnimationFrame =  frame</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="485769676394369" type="huevos">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="771937225252561" type="Function">
+                                    <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                                    <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="831932627419227">
+                    <conditions />
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="256894800447728" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="185832800084945" type="personaje">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="412355584323172" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="306430468142098" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="623855858114840" type="personaje">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="515568218853913">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="893438584919323" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="268929918297798" type="personaje" />
+            </actions>
+        </event-block>
+        <event-block sid="942849696439588">
+            <conditions>
+                <condition id="0" name="On function" sid="469939341021756" type="Function">
+                    <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="106085375727410">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="917239438581058" type="System">
+                            <param id="0" name="Object">huevos</param>
+                            <param id="1" name="Expression">huevos.AnimationFrame = Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="297866961892183" type="huevos">
+                            <param id="0" name="X">random(personaje.Width,LayoutWidth-personaje.Width)</param>
+                            <param id="1" name="Y">random(personaje.Height,LayoutHeight -personaje.Height)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="433525346047463">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="633942104793751" type="huevos">
+                    <param id="0" name="Object">ObjEscenarios</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="999505110900006" type="Function">
+                    <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                    <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="303662447069484">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="896059946031967" type="huevos">
+                    <param id="0" name="Object">huevos</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="590529390319968" type="Function">
+                    <param id="0" name="Name">&quot;randomHuevos&quot;</param>
+                    <param id="1" name="Parameter {n}">huevos.AnimationFrame</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="450751049879880">
+            <conditions />
+            <actions>
+                <action id="-13" name="Set boolean" sid="247201309524315" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="726463659208313" type="txt_reiniciando">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="956523530253881" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="0" name="Set text" sid="794730220334852" type="txt_reiniciando">
+                    <param id="0" name="Text">&quot;Reiniciando en 2&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="265039838440190" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="0" name="Set text" sid="544397023891937" type="txt_reiniciando">
+                    <param id="0" name="Text">&quot;Reiniciando en 1&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="866054135208382" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="893265977643663" type="System" />
+                <action id="-26" name="Restart layout" sid="355565377960574" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="999597771959035">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="197437937345436" type="Colision">
+                    <param id="0" name="Object">shasky</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="600838375359878" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="185655105860753" type="txt_reiniciando">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="477357347943915" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="0" name="Set text" sid="232423446914631" type="txt_reiniciando">
+                    <param id="0" name="Text">&quot;Reiniciando en 2&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="396600121522968" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="0" name="Set text" sid="583587165501168" type="txt_reiniciando">
+                    <param id="0" name="Text">&quot;Reiniciando en 1&quot;</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="959031760532491" type="System" />
+                <action id="-26" name="Restart layout" sid="229910508722274" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Multi_Shuriken</name>
+    <events>
+        <event-block sid="621220105685511">
+            <conditions>
+                <condition id="0" name="On function" sid="393996443320255" type="Function">
+                    <param id="0" name="Name">&quot;Multi_Shuriken&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="474257252670342">
+                    <conditions>
+                        <condition id="-10" name="For" sid="788460062982826" type="System">
+                            <param id="0" name="Name">&quot;fx&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="548197195754931" type="System">
+                            <param id="0" name="Object to create">Proj</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">personaje.ImagePointX(1)</param>
+                            <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="676038928442839" type="System">
+                            <param id="0" name="Object to create">ProjImage</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">personaje.ImagePointX(1)</param>
+                            <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="386325404596092" type="System">
+                            <param id="0" name="Object to create">Particles</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">personaje.ImagePointX(1)</param>
+                            <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="420277670320417" type="Proj">
+                            <param id="0" name="Instance variable">UID_Particle</param>
+                            <param id="1" name="Value">Particles.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="270548671581691" type="ProjImage">
+                            <param id="0" name="Pin to">Proj</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="690982614929794" type="ProjImage">
+                            <param id="0" name="Frame number">SkillButton.AnimationFrame</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="116549861735755" type="Proj">
+                            <param id="0" name="Angle">(360/10)*loopindex(&quot;fx&quot;)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="860766716435336" type="Particles">
+                            <param id="0" name="Object">ProjImage</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="273091152174797" type="Particles">
+                            <param id="0" name="Pin to">ProjImage</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="259507933195087">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="892259908917845" type="Proj" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="398109830540315" type="Particles" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

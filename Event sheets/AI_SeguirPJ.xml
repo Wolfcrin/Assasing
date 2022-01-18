@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AI_SeguirPJ</name>
+    <events>
+        <variable constant="0" name="anguloMovimiento" sid="760276412114129" static="0" type="number">0</variable>
+        <event-group description="" sid="310527955106792" title="AI_Seguir_Pj">
+            <sub-events>
+                <event-block sid="534053700680493">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="632438488100678" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="282991924976130" type="shasky">
+                            <param id="0" name="Obstacle">granRoca</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="489728350243737" type="shasky">
+                            <param id="0" name="Obstacle">arbol</param>
+                        </action>
+                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="207870032300971" type="shasky" />
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="324187049357062" type="shasky">
+                            <param id="0" name="X">random(0,LayoutWidth+1)</param>
+                            <param id="1" name="Y">random(0,LayoutHeight+1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="139317671405383">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="997383625014482" type="System">
+                            <param id="0" name="Interval (seconds)">5</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="432512993056652" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="527538852343226" type="shasky">
+                            <param id="0" name="X">random(0,LayoutWidth+1)</param>
+                            <param id="1" name="Y">random(0,LayoutHeight+1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="620932133756667">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="388942002800598" type="shasky" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="379305830041393" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="851020929695330" type="shasky">
+                            <param id="0" name="X">random(0,LayoutWidth+1)</param>
+                            <param id="1" name="Y">random(0,LayoutHeight+1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="172666784222253">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="703310635012364" type="shasky" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="609530593588778" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="362855747065838" type="shasky">
+                            <param id="0" name="X">random(0,LayoutWidth+1)</param>
+                            <param id="1" name="Y">random(0,LayoutHeight+1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="480332315090337">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="365083863397830" type="shasky">
+                            <param id="0" name="Instance variable">alertCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="709352067188478" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="638278418793824" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="976890091775194" type="shasky">
+                            <param id="0" name="Instance variable">hasLineOfSight</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Cando encuentra un path lo sigue</comment>
+                <event-block sid="296355188608435">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="178134600711602" type="shasky" />
+                        <condition id="-11" name="For Each" sid="395284434881718" type="System">
+                            <param id="0" name="Object">shasky</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="698305777864589" type="shasky" />
+                    </actions>
+                </event-block>
+                <event-block sid="206861670979270">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="175486392609497" type="shasky" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="132948519841546" type="System">
+                            <param id="0" name="Variable">anguloMovimiento</param>
+                            <param id="1" name="Value">shasky.Pathfinding.MovingAngle</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Derecha</comment>
+                        <event-block any="1" sid="272302174525869">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="728509738882528" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">315</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="714625694468172" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">45</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="756903736712016" type="shasky">
+                                    <param id="0" name="Instance variable">direccion</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="580371211101349">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="651532882202803" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">315</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="884188931196571" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">225</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="101816589420013" type="shasky">
+                                    <param id="0" name="Instance variable">direccion</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="971329386236349">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="237544152494627" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">225</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="792280980696608" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">135</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="902024090582892" type="shasky">
+                                    <param id="0" name="Instance variable">direccion</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="705888823814667">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="169024028735446" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">135</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="958099340936261" type="System">
+                                    <param id="0" name="First value">anguloMovimiento</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">45</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="982100462434425" type="shasky">
+                                    <param id="0" name="Instance variable">direccion</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="234254958298799">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="312562261065656" type="System">
+                            <param id="0" name="First value">distance(shasky.X,shasky.Y,personaje.X,personaje.Y)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">500</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="899383879881958" type="personaje">
+                            <param id="0" name="Instance variable">invisible</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="777740388201057" type="shasky">
+                            <param id="0" name="Instance variable">alertCooldown</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="758690409396551" type="shasky">
+                            <param id="0" name="Instance variable">hasLineOfSight</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="745570193844332" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="601733996633197">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="412608547214377" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="357951574438433" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="555416887294874" type="shasky">
+                            <param id="0" name="X">personaje.X</param>
+                            <param id="1" name="Y">personaje.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="932427699554703">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="504512536301081" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="981120229289424" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="146014763992138" type="shasky">
+                            <param id="0" name="Instance variable">alertCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="737565462578069">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="352224603407610" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="740895670190253" type="shasky">
+                            <param id="0" name="Instance variable">alertCooldown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="402952719982096" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="766328734796880" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="339189789138128" type="shasky">
+                            <param id="0" name="Instance variable">hasLineOfSight</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="627588017467095" type="System">
+                            <param id="0" name="Seconds">floor(random(2,4))</param>
+                        </action>
+                        <action behavior="Pathfinding" id="2" name="Stop" sid="517256250410243" type="shasky" />
+                    </actions>
+                </event-block>
+                <event-block sid="425185908861300">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="399403123630231" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="170564827216464" type="alerta">
+                            <param id="0" name="Object">shasky</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="168157451911858">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="258076149986559" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="532834710890271" type="alerta">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="246524405094768">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="247845402205530" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="541341673995701" type="alerta">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="812126307902797">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="958614130692946" type="shasky">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="635676530763645" type="shasky">
+                            <param id="0" name="Animation">&quot;rigth&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="689102034715345">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="671754375143853" type="shasky">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="395892550698723" type="shasky">
+                            <param id="0" name="Animation">&quot;up&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="805374400441162">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="319895532972599" type="shasky">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="809396831293934" type="shasky">
+                            <param id="0" name="Animation">&quot;left&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="152254915930819">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="394021283926045" type="shasky">
+                            <param id="0" name="Instance variable">direccion</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="301564810072929" type="shasky">
+                            <param id="0" name="Animation">&quot;down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="696001346025247">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="210481181604155" type="personaje">
+                            <param id="0" name="Instance variable">invisible</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="711006054451000" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="737735006364464" type="shasky" />
+                        <action id="-16" name="Wait" sid="648774833531271" type="System">
+                            <param id="0" name="Seconds">floor(random(2))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="395414485284909" type="shasky">
+                            <param id="0" name="Instance variable">alertCooldown</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="262738785125575" type="shasky">
+                            <param id="0" name="Instance variable">hasLineOfSight</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="365570283429490" type="shasky">
+                            <param id="0" name="Instance variable">alerted</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Pathfinding" id="14" name="Set speed" sid="879647689447360" type="shasky">
+                            <param id="0" name="Speed">75</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

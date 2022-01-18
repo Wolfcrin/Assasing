@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>controles</name>
+    <events>
+        <event-group description="" sid="246431225928749" title="Controles">
+            <sub-events>
+                <event-block sid="314619995324540">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="639591634228190" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="907115709833644" type="personaje">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="172130903330187">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="110201165923043" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="981439784261183" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminadoDerecha&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="804456018198848" type="personaje">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="542864128292939">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="625258719603196" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="382177459304373" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminandoIzquierda&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="568761207160163" type="personaje">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="641378196300805">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key is down" sid="783687435102332" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="450256775953776" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="409890088589847" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminandoDetras&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="131504388494383">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="360203479352181" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="540360819442831" type="personaje">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="710010630427799">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="456282490873340" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="306719030263160" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminadoDerecha&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="735563089100667" type="personaje">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="777922899366625">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="264342728652731" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="533805564550497" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminandoIzquierda&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="913755324378482" type="personaje">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="342344241826582">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key is down" sid="354007829278131" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="732620925930716" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="248614382876618" type="personaje">
+                                    <param id="0" name="Animation">&quot;caminandoFrente&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="536983681280561">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="374709529469106" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="706661975526550" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="889061823273395" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="955220632173430" type="personaje">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="233251131440039" type="personaje">
+                            <param id="0" name="Animation">&quot;caminandoIzquierda&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="124606230185275">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="904966218352338" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="768173792345792" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="801325843036435" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="637087915711707" type="personaje">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="739483821036000" type="personaje">
+                            <param id="0" name="Animation">&quot;caminadoDerecha&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="464280055997454">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="347619347798226" type="Keyboard">
+                            <param id="0" name="Key">72 (H)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Toggle boolean" sid="339533584727831" type="personaje">
+                            <param id="0" name="Instance variable">invisible</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="621293055601426">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="150842629471989" type="personaje">
+                            <param id="0" name="Instance variable">invisible</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="667885191068646" type="personaje">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="764964397545320">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="424339133326463" type="System" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="375423119982639" type="Colision">
+                            <param id="0" name="Instance variable">puedeColisionar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="126759265794731" type="personaje">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="710479849465137">
+                    <conditions>
+                        <condition id="7" name="On any key released" sid="264845909633754" type="Keyboard" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="959734296185335" type="personaje">
+                            <param id="0" name="Animation">&quot;parado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

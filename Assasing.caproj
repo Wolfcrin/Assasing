@@ -1,0 +1,1580 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Assasing</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3fetvclgbec0m</unique-id>
+    <saved-with-version>23300</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="SirG" id="sirg_notifications" version="1.299999952">Notifications</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1366</width>
+        <height>768</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Obstaculos">
+            <object-type name="blockRoca" sid="232145930756894">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="uidPadre" sid="219222317306588" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="815370201994500">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="286360682070462">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="320281683113829" speed="5">
+                        <frame duration="1" hotspotX="0.48" hotspotY="0.884">
+                            <collision-poly>
+                                <point x="0.044" y="0.472" />
+                                <point x="0.216" y="0.182" />
+                                <point x="0.796" y="0.188" />
+                                <point x="1" y="0.5" />
+                                <point x="0.964" y="1" />
+                                <point x="0.112" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="blockTronco" sid="747184504089744">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="uidPadre" sid="665633137860213" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="757412448778703">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="369408591010805">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="928819189949434" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.625">
+                            <collision-poly>
+                                <point x="0.216" y="0.182" />
+                                <point x="0.749125" y="0.180187" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="blockArbol" sid="417277803461789">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="uidPadre" sid="830970924043620" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="868817302990915">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="890426542854777">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="403254858803444" speed="5">
+                        <frame duration="1" hotspotX="0.48" hotspotY="0.884">
+                            <collision-poly>
+                                <point x="0.044" y="0.472" />
+                                <point x="0.216" y="0.182" />
+                                <point x="0.796" y="0.188" />
+                                <point x="1" y="0.5" />
+                                <point x="0.964" y="1" />
+                                <point x="0.112" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Escenario">
+            <object-type name="arbol" sid="799697068123813">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="251760121150424" speed="5">
+                        <frame duration="1" hotspotX="0.388235" hotspotY="0.943038" original-source="C:\Users\carmelo\Desktop\Elementos ramtark\arbol.png">
+                            <collision-poly>
+                                <point x="0.105882" y="0.056962" />
+                                <point x="0.494118" y="0.0253165" />
+                                <point x="0.788235" y="0.113924" />
+                                <point x="0.882353" y="0.5" />
+                                <point x="0.505882" y="0.734177" />
+                                <point x="0.494118" y="0.987342" />
+                                <point x="0.2" y="0.892405" />
+                                <point x="0.235294" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fuenteFlotante" sid="753398058320831">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="393406969343161">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Sine2" sid="938925550640088">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="574713595087884" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503226" original-source="C:\Users\carmelo\Desktop\Elementos ramtark\image4155.png">
+                            <collision-poly>
+                                <point x="0.141892" y="0.135484" />
+                                <point x="0.5" y="0.0322581" />
+                                <point x="0.898649" y="0.0967742" />
+                                <point x="0.939189" y="0.496774" />
+                                <point x="0.668919" y="0.683871" />
+                                <point x="0.5" y="0.909677" />
+                                <point x="0.344595" y="0.670968" />
+                                <point x="0.101351" y="0.496774" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="granRoca" sid="636464167660831">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="875178219251712" speed="5">
+                        <frame duration="1" hotspotX="0.54" hotspotY="0.95539" original-source="C:\Users\carmelo\Desktop\Elementos ramtark\image4144.png">
+                            <collision-poly>
+                                <point x="0.2" y="0.111524" />
+                                <point x="0.5" y="0.0223048" />
+                                <point x="0.786667" y="0.118959" />
+                                <point x="0.82" y="0.498141" />
+                                <point x="0.893333" y="0.94052" />
+                                <point x="0.5" y="0.992565" />
+                                <point x="0.286667" y="0.840149" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="hongo" sid="507944815497333">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="crecimiento" sid="691067748763933" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="885720170925844" speed="5">
+                        <frame duration="1" hotspotX="0.521739" hotspotY="0.5" original-source="C:\Users\carmelo\Desktop\Elementos ramtark\hongo.png">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.478261" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="0.956522" y="1" />
+                                <point x="0.478261" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="sombre" sid="829671322780386">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="uidPadre" sid="654027403650559" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="522425915661817">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="182727694998486" speed="5">
+                        <frame duration="1" hotspotX="0.491979" hotspotY="0.472727" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="tronco" sid="246717161352879">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="808849332080482" speed="5">
+                        <frame duration="1" hotspotX="0.484536" hotspotY="0.882353" original-source="C:\Users\carmelo\Desktop\Elementos ramtark\tronco.png">
+                            <collision-poly>
+                                <point x="0.237113" y="0.22549" />
+                                <point x="0.494845" y="0.00980392" />
+                                <point x="0.742268" y="0.245098" />
+                                <point x="0.907216" y="0.5" />
+                                <point x="0.927835" y="0.931373" />
+                                <point x="0.0721649" y="0.931373" />
+                                <point x="0.237113" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Bichos">
+            <object-type name="shasky" sid="585863841599574">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="alertCooldown" sid="745437671222033" type="number" />
+                    <instance-variable name="hasLineOfSight" sid="216190942820026" type="boolean" />
+                    <instance-variable name="alerted" sid="970923645681982" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pathfinding" sid="467644331314260">
+                        <behavior id="Pathfinding" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="480859418520751">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>shasky</type>
+                    <type>alerta</type>
+                    <type>eyes</type>
+                    <type>vision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="down" pingpong="0" repeatcount="1" repeatto="0" sid="339240898005360" speed="5">
+                        <frame duration="1" hotspotX="0.504202" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-frente_000.png">
+                            <image-point name="Imagepoint 1" x="1.15126" y="0.178899" />
+                            <collision-poly>
+                                <point x="0.0168067" y="0.426605" />
+                                <point x="0.0168067" y="0.00458716" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.43578" />
+                                <point x="0.697479" y="0.995413" />
+                                <point x="0.218487" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-frente_001.png">
+                            <image-point name="Imagepoint 1" x="1.15126" y="0.178899" />
+                            <collision-poly>
+                                <point x="0.0168067" y="0.426605" />
+                                <point x="0.0168067" y="0.00458716" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.43578" />
+                                <point x="0.697479" y="0.995413" />
+                                <point x="0.218487" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-frente_002.png">
+                            <image-point name="Imagepoint 1" x="1.15126" y="0.178899" />
+                            <collision-poly>
+                                <point x="0.0168067" y="0.426605" />
+                                <point x="0.0168067" y="0.00458716" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.43578" />
+                                <point x="0.697479" y="0.995413" />
+                                <point x="0.218487" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-frente_003.png">
+                            <image-point name="Imagepoint 1" x="1.15126" y="0.178899" />
+                            <collision-poly>
+                                <point x="0.0168067" y="0.426605" />
+                                <point x="0.0168067" y="0.00458716" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.43578" />
+                                <point x="0.697479" y="0.995413" />
+                                <point x="0.218487" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="left" pingpong="0" repeatcount="1" repeatto="0" sid="293573153622295" speed="5">
+                        <frame duration="1" hotspotX="0.496552" hotspotY="0.502645" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-lateral_000.png">
+                            <image-point name="Imagepoint 1" x="0.875862" y="0.301587" />
+                            <collision-poly>
+                                <point x="0.627586" y="1" />
+                                <point x="0.331034" y="1" />
+                                <point x="0.0896552" y="0.698413" />
+                                <point x="0.327586" y="0" />
+                                <point x="0.875862" y="0.010582" />
+                                <point x="0.848276" y="0.452381" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.496552" hotspotY="0.502645" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-lateral_001.png">
+                            <image-point name="Imagepoint 1" x="0.875862" y="0.301587" />
+                            <collision-poly>
+                                <point x="0.627586" y="1" />
+                                <point x="0.331034" y="1" />
+                                <point x="0.0482759" y="0.592593" />
+                                <point x="0.327586" y="0" />
+                                <point x="0.875862" y="0.010582" />
+                                <point x="0.97931" y="0.806878" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.496552" hotspotY="0.502645" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-lateral_002.png">
+                            <image-point name="Imagepoint 1" x="0.875862" y="0.301587" />
+                            <collision-poly>
+                                <point x="0.282759" y="0.859788" />
+                                <point x="0.275862" y="0" />
+                                <point x="0.817241" y="0" />
+                                <point x="0.875862" y="0.444444" />
+                                <point x="0.668966" y="1" />
+                                <point x="0.372414" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.496552" hotspotY="0.502645" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shasky-caminando-lateral_003.png">
+                            <image-point name="Imagepoint 1" x="0.875862" y="0.301587" />
+                            <collision-poly>
+                                <point x="0.0344828" y="0.563492" />
+                                <point x="0.427586" y="0" />
+                                <point x="0.727586" y="0" />
+                                <point x="0.896552" y="0.428571" />
+                                <point x="0.731035" y="1" />
+                                <point x="0.262069" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="up" pingpong="0" repeatcount="1" repeatto="0" sid="309223444122366" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502488" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shaky-caminando-detraz_000.png">
+                            <image-point name="Imagepoint 1" x="1.07857" y="0.268657" />
+                            <collision-poly>
+                                <point x="0" y="0.462687" />
+                                <point x="0.0642857" y="0.00497512" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.450249" />
+                                <point x="0.7" y="1" />
+                                <point x="0.25" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502488" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shaky-caminando-detraz_001.png">
+                            <image-point name="Imagepoint 1" x="1.07857" y="0.268657" />
+                            <collision-poly>
+                                <point x="0" y="0.462687" />
+                                <point x="0.0642857" y="0.00497512" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.450249" />
+                                <point x="0.7" y="1" />
+                                <point x="0.25" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502488" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shaky-caminando-detraz_002.png">
+                            <image-point name="Imagepoint 1" x="1.07857" y="0.268657" />
+                            <collision-poly>
+                                <point x="0" y="0.462687" />
+                                <point x="0.0642857" y="0.00497512" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.450249" />
+                                <point x="0.7" y="1" />
+                                <point x="0.25" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.502488" original-source="\\SERVER7\Juegos\Ramtark\Animaciones Shasky\shaky-caminando-detraz_003.png">
+                            <image-point name="Imagepoint 1" x="1.07857" y="0.268657" />
+                            <collision-poly>
+                                <point x="0" y="0.462687" />
+                                <point x="0.0642857" y="0.00497512" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.450249" />
+                                <point x="0.7" y="1" />
+                                <point x="0.25" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="rigth" pingpong="0" repeatcount="1" repeatto="0" sid="342577494866010" speed="5">
+                        <frame duration="1" hotspotX="0.503448" hotspotY="0.502645">
+                            <image-point name="Imagepoint 1" x="0.00689655" y="0.232804" />
+                            <collision-poly>
+                                <point x="0.151724" y="0.452381" />
+                                <point x="0.124138" y="0.010582" />
+                                <point x="0.672414" y="0" />
+                                <point x="0.910345" y="0.698413" />
+                                <point x="0.668966" y="1" />
+                                <point x="0.372414" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.503448" hotspotY="0.502645">
+                            <image-point name="Imagepoint 1" x="0.00689655" y="0.232804" />
+                            <collision-poly>
+                                <point x="0.0206897" y="0.806878" />
+                                <point x="0.124138" y="0.010582" />
+                                <point x="0.672414" y="0" />
+                                <point x="0.951724" y="0.592593" />
+                                <point x="0.668966" y="1" />
+                                <point x="0.372414" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.503448" hotspotY="0.502645">
+                            <image-point name="Imagepoint 1" x="0.00689655" y="0.232804" />
+                            <collision-poly>
+                                <point x="0.627586" y="1" />
+                                <point x="0.331034" y="1" />
+                                <point x="0.124138" y="0.444444" />
+                                <point x="0.182759" y="0" />
+                                <point x="0.724138" y="0" />
+                                <point x="0.717241" y="0.859788" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.503448" hotspotY="0.502645">
+                            <image-point name="Imagepoint 1" x="0.00689655" y="0.232804" />
+                            <collision-poly>
+                                <point x="0.737931" y="1" />
+                                <point x="0.268965" y="1" />
+                                <point x="0.103448" y="0.428571" />
+                                <point x="0.272414" y="0" />
+                                <point x="0.572414" y="0" />
+                                <point x="0.965517" y="0.563492" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="murcielago" sid="807626564160127">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="955512225658321">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="down" pingpong="0" repeatcount="1" repeatto="0" sid="157178835306095" speed="5">
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_001.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_000.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_002.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_003.png" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="rigth" pingpong="0" repeatcount="1" repeatto="0" sid="764286578908028" speed="5">
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_000.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_001.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_002.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_003.png" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="left" pingpong="0" repeatcount="1" repeatto="0" sid="742012626699278" speed="5">
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_000.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_001.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_002.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.502924" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-frente_003.png" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="up" pingpong="0" repeatcount="1" repeatto="0" sid="906449374216418" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-tras_000.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-tras_001.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-tras_002.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\fanta-tras_003.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Funcionales">
+            <object-type global="1" name="arHuevos" sid="991880954750494">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="Function" sid="899616125936321">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Keyboard" sid="248493317591398">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Notifications" sid="404496866954499">
+                <plugin id="sirg_notifications" />
+            </object-type>
+            <object-type global="1" name="ZSorter" sid="445604771261165">
+                <plugin id="Rex_ZSorter" />
+            </object-type>
+            <object-type name="Mouse" sid="628770957028071">
+                <plugin id="Mouse" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Iconos">
+            <object-type name="alerta" sid="424167434080416">
+                <plugin id="Sprite" />
+                <container>
+                    <type>shasky</type>
+                    <type>alerta</type>
+                    <type>eyes</type>
+                    <type>vision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="333055954304092" speed="5">
+                        <frame duration="1" hotspotX="0.44" hotspotY="0.906667" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\Capa pegada.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="eyes" sid="142284018252244">
+                <plugin id="Sprite" />
+                <container>
+                    <type>shasky</type>
+                    <type>alerta</type>
+                    <type>eyes</type>
+                    <type>vision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125167655766702" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="huevosIcons" sid="166930607119794">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="posicion" sid="579224251563060" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="758295385354999" speed="0">
+                        <frame duration="1" hotspotX="0.488372" hotspotY="0.534884" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hamarillo.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hverde #2.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hceleste.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hnaranja.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hrojo.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hverde #1.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hvioleta.png" />
+                        <frame duration="1" hotspotX="0.511628" hotspotY="0.511628" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="vision" sid="631943900916934">
+                <plugin id="Sprite" />
+                <container>
+                    <type>shasky</type>
+                    <type>alerta</type>
+                    <type>eyes</type>
+                    <type>vision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464647059430502" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="visionlost" sid="904018923831304">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219819668854140" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Personaje">
+            <object-type name="Colision" sid="874567323697015">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="puedeColisionar" sid="807056114757156" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="933573708033205">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>personaje</type>
+                    <type>Colision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="556695543781219" speed="5">
+                        <frame duration="1" hotspotX="0.492" hotspotY="0.796">
+                            <collision-poly>
+                                <point x="0.228" y="0.02" />
+                                <point x="0.704" y="0.02" />
+                                <point x="0.96" y="0.31" />
+                                <point x="0.962" y="0.647" />
+                                <point x="0.688" y="1" />
+                                <point x="0.228" y="1" />
+                                <point x="0.03" y="0.624" />
+                                <point x="0.031" y="0.324" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="personaje" sid="967005989388391">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="invisible" sid="797721189172381" type="boolean" />
+                    <instance-variable name="puedeColisionar" sid="397003513879987" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="518412913352346">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="913311604624998">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="852195960406015">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Fade" sid="702703816586724">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                    <behavior-type name="MoveTo" sid="146620908708218">
+                        <behavior id="Rex_MoveTo" />
+                    </behavior-type>
+                    <behavior-type name="Pathfinding" sid="758856652145728">
+                        <behavior id="Pathfinding" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>personaje</type>
+                    <type>Colision</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="caminandoDetras" pingpong="0" repeatcount="1" repeatto="0" sid="711999870275393" speed="5">
+                        <frame duration="1" hotspotX="0.50505" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-detras_003.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.927885" />
+                            <image-point name="Disparo" x="0.585859" y="0.581731" />
+                            <image-point name="Boomerang" x="0.69697" y="0.769231" />
+                            <collision-poly>
+                                <point x="0.267677" y="0.771635" />
+                                <point x="0.868687" y="0.778846" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.50505" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-detras_000.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.927885" />
+                            <image-point name="Disparo" x="0.585859" y="0.581731" />
+                            <image-point name="Boomerang" x="0.69697" y="0.769231" />
+                            <collision-poly>
+                                <point x="0.267677" y="0.771635" />
+                                <point x="0.868687" y="0.778846" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.50505" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-detras_001.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.927885" />
+                            <image-point name="Disparo" x="0.585859" y="0.581731" />
+                            <image-point name="Boomerang" x="0.69697" y="0.769231" />
+                            <collision-poly>
+                                <point x="0.267677" y="0.771635" />
+                                <point x="0.868687" y="0.778846" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.50505" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-detras_002.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.927885" />
+                            <image-point name="Disparo" x="0.585859" y="0.581731" />
+                            <image-point name="Boomerang" x="0.737374" y="0.764423" />
+                            <collision-poly>
+                                <point x="0.267677" y="0.771635" />
+                                <point x="0.868687" y="0.778846" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="caminandoFrente" pingpong="0" repeatcount="1" repeatto="0" sid="170777957068302" speed="5">
+                        <frame duration="1" hotspotX="0.504348" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-frente_003.png">
+                            <image-point name="Imagepoint 1" x="0.556522" y="0.929577" />
+                            <image-point name="Disparo" x="0.382609" y="0.619718" />
+                            <image-point name="Boomerang" x="0.4" y="0.769953" />
+                            <collision-poly>
+                                <point x="0.129688" y="0.769084" />
+                                <point x="0.574967" y="0.771262" />
+                                <point x="0.586473" y="1" />
+                                <point x="0.142029" y="0.995305" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504348" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-frente_000.png">
+                            <image-point name="Imagepoint 1" x="0.556522" y="0.929577" />
+                            <image-point name="Disparo" x="0.382609" y="0.619718" />
+                            <image-point name="Boomerang" x="0.4" y="0.769953" />
+                            <collision-poly>
+                                <point x="0.129688" y="0.769084" />
+                                <point x="0.574967" y="0.771262" />
+                                <point x="0.586473" y="1" />
+                                <point x="0.142029" y="0.995305" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504348" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-frente_001.png">
+                            <image-point name="Imagepoint 1" x="0.556522" y="0.929577" />
+                            <image-point name="Disparo" x="0.382609" y="0.619718" />
+                            <image-point name="Boomerang" x="0.4" y="0.769953" />
+                            <collision-poly>
+                                <point x="0.129688" y="0.769084" />
+                                <point x="0.574967" y="0.771262" />
+                                <point x="0.586473" y="1" />
+                                <point x="0.142029" y="0.995305" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504348" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-frente_002.png">
+                            <image-point name="Imagepoint 1" x="0.556522" y="0.929577" />
+                            <image-point name="Disparo" x="0.382609" y="0.619718" />
+                            <image-point name="Boomerang" x="0.4" y="0.769953" />
+                            <collision-poly>
+                                <point x="0.129688" y="0.769084" />
+                                <point x="0.574967" y="0.771262" />
+                                <point x="0.586473" y="1" />
+                                <point x="0.142029" y="0.995305" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="caminadoDerecha" pingpong="0" repeatcount="1" repeatto="0" sid="322820210048991" speed="5">
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-lateral_000.png">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.705882" y="0.610092" />
+                            <image-point name="Boomerang" x="0.411765" y="0.834862" />
+                            <collision-poly>
+                                <point x="0.321577" y="0.784999" />
+                                <point x="0.782786" y="0.786962" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-lateral_001.png">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.705882" y="0.610092" />
+                            <image-point name="Boomerang" x="0.731092" y="0.811927" />
+                            <collision-poly>
+                                <point x="0.321577" y="0.784999" />
+                                <point x="0.782786" y="0.786962" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-lateral_002.png">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.705882" y="0.610092" />
+                            <image-point name="Boomerang" x="0.915966" y="0.697248" />
+                            <collision-poly>
+                                <point x="0.321577" y="0.784999" />
+                                <point x="0.782786" y="0.786962" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-caminando-lateral_003.png">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.705882" y="0.610092" />
+                            <image-point name="Boomerang" x="0.689076" y="0.821101" />
+                            <collision-poly>
+                                <point x="0.321577" y="0.784999" />
+                                <point x="0.782786" y="0.786962" />
+                                <point x="0.777778" y="0.995192" />
+                                <point x="0.333333" y="0.990385" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="caminandoIzquierda" pingpong="0" repeatcount="1" repeatto="0" sid="577711698086774" speed="5">
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.268908" y="0.587156" />
+                            <image-point name="Boomerang" x="0.630252" y="0.830275" />
+                            <collision-poly>
+                                <point x="0.338384" y="0.739128" />
+                                <point x="0.639929" y="0.736503" />
+                                <point x="0.618114" y="1" />
+                                <point x="0.316527" y="0.999559" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.268908" y="0.587156" />
+                            <image-point name="Boomerang" x="0.235294" y="0.807339" />
+                            <collision-poly>
+                                <point x="0.338384" y="0.739128" />
+                                <point x="0.639929" y="0.736503" />
+                                <point x="0.618114" y="1" />
+                                <point x="0.316527" y="0.999559" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.268908" y="0.587156" />
+                            <image-point name="Boomerang" x="0.092437" y="0.711009" />
+                            <collision-poly>
+                                <point x="0.338384" y="0.739128" />
+                                <point x="0.639929" y="0.736503" />
+                                <point x="0.618114" y="1" />
+                                <point x="0.316527" y="0.999559" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504202" hotspotY="1">
+                            <image-point name="Imagepoint 1" x="0.554622" y="0.926606" />
+                            <image-point name="Disparo" x="0.268908" y="0.587156" />
+                            <image-point name="Boomerang" x="0.310924" y="0.811927" />
+                            <collision-poly>
+                                <point x="0.338384" y="0.739128" />
+                                <point x="0.639929" y="0.736503" />
+                                <point x="0.618114" y="1" />
+                                <point x="0.316527" y="0.999559" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="parado" pingpong="0" repeatcount="1" repeatto="0" sid="923427848512372" speed="5">
+                        <frame duration="1" hotspotX="0.504274" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-parado_001.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.92891" />
+                            <image-point name="Disparo" x="0.401709" y="0.620853" />
+                            <image-point name="Boomerang" x="0.589744" y="0.796209" />
+                            <collision-poly>
+                                <point x="0.252914" y="0.758715" />
+                                <point x="0.501165" y="0.760982" />
+                                <point x="0.581196" y="1" />
+                                <point x="0.153846" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504274" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-parado_000.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.92891" />
+                            <image-point name="Disparo" x="0.401709" y="0.620853" />
+                            <image-point name="Boomerang" x="0.717949" y="0.800948" />
+                            <collision-poly>
+                                <point x="0.252914" y="0.758715" />
+                                <point x="0.501165" y="0.760982" />
+                                <point x="0.581196" y="1" />
+                                <point x="0.153846" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504274" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-parado_002.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.92891" />
+                            <image-point name="Disparo" x="0.401709" y="0.620853" />
+                            <image-point name="Boomerang" x="0.538462" y="0.777251" />
+                            <collision-poly>
+                                <point x="0.252914" y="0.758715" />
+                                <point x="0.501165" y="0.760982" />
+                                <point x="0.581196" y="1" />
+                                <point x="0.153846" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504274" hotspotY="1" original-source="\\SERVER7\Juegos\Ramtark\Tolmik\Animaciones Exportadas\tolmik-parado_003.png">
+                            <image-point name="Imagepoint 1" x="0.555556" y="0.92891" />
+                            <image-point name="Disparo" x="0.401709" y="0.620853" />
+                            <image-point name="Boomerang" x="0.615385" y="0.810427" />
+                            <collision-poly>
+                                <point x="0.252914" y="0.758715" />
+                                <point x="0.501165" y="0.760982" />
+                                <point x="0.581196" y="1" />
+                                <point x="0.153846" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Objetos">
+            <object-type name="huevos" sid="381025334773531">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="posicion" sid="999543226179128" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="742013842928406">
+                        <behavior id="bound" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="331216141762868" speed="0">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504274" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hamarillo.png" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504762" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hverde #2.png" />
+                        <frame duration="1" hotspotX="0.504854" hotspotY="0.504673" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hceleste.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hnaranja.png" />
+                        <frame duration="1" hotspotX="0.505155" hotspotY="0.504951" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hrojo.png" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504762" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hverde #1.png" />
+                        <frame duration="1" hotspotX="0.504762" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\hvioleta.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="UI">
+            <object-type name="txtFPS" sid="580015878918665">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txt_reiniciando" sid="974389772091608">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="boton" sid="993341971570164">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="dondeIr" sid="427135209188150" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="831436095223472" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\Capa pegada #2.png">
+                            <collision-poly>
+                                <point x="0.0328638" y="0.122807" />
+                                <point x="0.5" y="0.114035" />
+                                <point x="0.950704" y="0.184211" />
+                                <point x="0.99061" y="0.5" />
+                                <point x="0.969484" y="0.885965" />
+                                <point x="0.5" y="0.947368" />
+                                <point x="0.0305164" y="0.885965" />
+                                <point x="0.00469484" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.517544" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\Capa pegada #1.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="button" sid="503596558745682">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="141986547549136" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fondo_ayuda" sid="265807135688775">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="931481730389347" speed="5">
+                        <frame duration="1" hotspotX="0.472656" hotspotY="0.480469" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\fondo_mensajeLargo.png">
+                            <collision-poly>
+                                <point x="0.247991" y="0.0257511" />
+                                <point x="0.831228" y="0.0171674" />
+                                <point x="0.979334" y="0.433476" />
+                                <point x="0.97589" y="0.357296" />
+                                <point x="0.831228" y="0.986051" />
+                                <point x="0.0264064" y="0.975322" />
+                                <point x="0.00803674" y="0.396996" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="fondo_mensajeLargo" sid="803040241552244">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="564780348250832" speed="5">
+                        <frame duration="1" hotspotX="0.501149" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\fondo_mensajeLargo.png">
+                            <image-point name="text" x="0.133333" y="0.167382" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Ganaste" sid="989248721763942">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="377252023772887" speed="0">
+                        <frame duration="1" hotspotX="0.50049" hotspotY="0.501089" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\win.png">
+                            <collision-poly>
+                                <point x="0.0176298" y="0.0392157" />
+                                <point x="0.49951" y="0.0849673" />
+                                <point x="0.976494" y="0.0522876" />
+                                <point x="0.997062" y="0.498911" />
+                                <point x="0.992165" y="0.982571" />
+                                <point x="0.49951" y="0.96732" />
+                                <point x="0.101861" y="0.77342" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\lose.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="globoMensaje" sid="792282161616583">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="845230420458379">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="359126458972952" speed="5">
+                        <frame duration="1" hotspotX="0.211538" hotspotY="0.965517" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\globoMensaje.png">
+                            <collision-poly>
+                                <point x="0.100962" y="0.144828" />
+                                <point x="0.5" y="0.0206897" />
+                                <point x="0.903846" y="0.137931" />
+                                <point x="0.975962" y="0.496552" />
+                                <point x="0.788462" y="0.696552" />
+                                <point x="0.5" y="0.731034" />
+                                <point x="0.173077" y="0.751724" />
+                                <point x="0.00480769" y="0.496552" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="lbl_lo_quedice" sid="400911235147823">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="841695853378929">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="mensaje" sid="296488231021444">
+                <plugin id="Sprite" />
+                <container>
+                    <type>mensaje</type>
+                    <type>txt_TextoNpc</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="887448650020397" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\mensaje.png">
+                            <image-point name="text" x="0.148649" y="0.194118" />
+                            <collision-poly>
+                                <point x="0.0416667" y="0.0973684" />
+                                <point x="0.5" y="0.0315789" />
+                                <point x="0.952703" y="0.110526" />
+                                <point x="0.987613" y="0.971053" />
+                                <point x="0.5" y="0.860526" />
+                                <point x="0.0686937" y="0.839474" />
+                                <point x="0.0146396" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Fondo">
+            <object-type name="TiledBackground" sid="314546831681699">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="TiledBackground2" sid="419496389388387">
+                <plugin id="TiledBg" />
+                <texture original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\terreno-sin-costuras.png" />
+            </object-type>
+            <object-type name="raya" sid="584511664975969">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="351924983078278" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya1.png">
+                            <collision-poly>
+                                <point x="0.0932203" y="0.351695" />
+                                <point x="0.379237" y="0.161017" />
+                                <point x="0.949152" y="0.411017" />
+                                <point x="0.927966" y="0.673729" />
+                                <point x="0.0699152" y="0.673729" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya2.png">
+                            <collision-poly>
+                                <point x="0.235409" y="0.526087" />
+                                <point x="0.5" y="0.486957" />
+                                <point x="0.850195" y="0.334783" />
+                                <point x="0.577821" y="0.5" />
+                                <point x="0.723735" y="0.382609" />
+                                <point x="0.5" y="0.513043" />
+                                <point x="0.198444" y="0.556522" />
+                                <point x="0.383268" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya3.png">
+                            <collision-poly>
+                                <point x="0.196165" y="0.527778" />
+                                <point x="0.5" y="0.436508" />
+                                <point x="0.734513" y="0.714286" />
+                                <point x="0.554572" y="0.5" />
+                                <point x="0.5" y="0.464286" />
+                                <point x="0.20944" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya4.png">
+                            <collision-poly>
+                                <point x="0.297398" y="0.808081" />
+                                <point x="0.5" y="0.671717" />
+                                <point x="0.771375" y="0.378788" />
+                                <point x="0.5" y="0.69697" />
+                                <point x="0.652416" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya5.png">
+                            <collision-poly>
+                                <point x="0.224638" y="0.69403" />
+                                <point x="0.5" y="0.529851" />
+                                <point x="0.817633" y="0.563433" />
+                                <point x="0.792271" y="0.5" />
+                                <point x="0.5" y="0.552239" />
+                                <point x="0.0845411" y="0.738806" />
+                                <point x="0.520531" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\acuarelas recortar\terreno\raya6.png">
+                            <collision-poly>
+                                <point x="0.212676" y="0.594488" />
+                                <point x="0.5" y="0.669291" />
+                                <point x="0.849296" y="0.42126" />
+                                <point x="0.764789" y="0.5" />
+                                <point x="0.788732" y="0.409449" />
+                                <point x="0.5" y="0.688976" />
+                                <point x="0.152113" y="0.574803" />
+                                <point x="0.757746" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="tolmik sprites" />
+        <object-folder name="Disparos">
+            <object-type name="disparo" sid="458229327629710">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="833955662760136">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="635594067263333">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="138957764990565" speed="5">
+                        <frame duration="1" hotspotX="0.529412" hotspotY="0.529412">
+                            <image-point name="Imagepoint 1" x="0.882353" y="0.470588" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="NPC">
+            <object-type name="NPC" sid="724728669358686">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="puedeHablar" sid="836517346079995" type="boolean" />
+                    <instance-variable name="cantCharlas" sid="207250991535642" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="635020292875243" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\osito_000.png">
+                            <image-point name="Imagepoint 1" x="1.07143" y="0.260417" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\osito_001.png">
+                            <image-point name="Imagepoint 1" x="1.07143" y="0.260417" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\osito_002.png">
+                            <image-point name="Imagepoint 1" x="1.07143" y="0.260417" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\SERVER7\Juegos\Ramtark\npcs\animaciones\osito_003.png">
+                            <image-point name="Imagepoint 1" x="1.07143" y="0.260417" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Particles">
+            <object-type name="Particles" sid="570920223131556">
+                <plugin id="Particles" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="994080310491895">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="139372324750496">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-type name="Sprite" sid="267005718041284">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="607686971619910">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="340386528538009" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txt_TextoNpc" sid="379887638336886">
+            <plugin id="Text" />
+            <container>
+                <type>mensaje</type>
+                <type>txt_TextoNpc</type>
+            </container>
+        </object-type>
+        <object-type name="TiledBackground3" sid="338989614352751">
+            <plugin id="TiledBg" />
+            <texture original-source="\\SERVER7\Juegos\Ramtark\Fondo-menu.jpg" />
+        </object-type>
+        <object-type name="text_ayuda" sid="443510890737140">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SkillButton" sid="223664495496740">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Cooldown" sid="408550845705941" type="boolean" />
+                <instance-variable name="sTime" sid="154438386518678" type="number" />
+                <instance-variable name="sEndTime" sid="560474034137649" type="number" />
+                <instance-variable name="Habilidad" sid="605611535515065" type="string" />
+                <instance-variable name="Activa" sid="492975979289248" type="boolean" />
+                <instance-variable name="Inicilizador" sid="154705744982470" type="string" />
+                <instance-variable name="Destructor" sid="638010060135881" type="string" />
+                <instance-variable name="Letra_Rapida" sid="351518360288187" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="207406936270043" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carmelo\Desktop\splash.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carmelo\Desktop\splash - copia.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtSkillTimer" sid="122854421928098">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Skill" sid="928242913907924" type="number" />
+                <instance-variable name="uidPadre" sid="739413367777302" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="610657950690804">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="SkillCover" sid="178826174804769">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Skill" sid="396570507402574" type="number" />
+                <instance-variable name="UIDPadre" sid="992884223279371" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="543094134604020">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="113448890475284" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Proj" sid="154170302438982">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="UID_Particle" sid="795824567055876" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="208271468161316">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="563963863280694">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="469899985959617" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProjImage" sid="668809502179617">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="468703445502994">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="633797201090901">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="434254204720805">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="737812133987702" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.352941" y="0.352941" />
+                            <point x="0.5" y="0.117647" />
+                            <point x="0.647059" y="0.352941" />
+                            <point x="0.882353" y="0.5" />
+                            <point x="0.647059" y="0.647059" />
+                            <point x="0.5" y="0.911765" />
+                            <point x="0.352941" y="0.647059" />
+                            <point x="0.0882353" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.5" y="0.441176" />
+                            <point x="0.882353" y="0.117647" />
+                            <point x="0.588235" y="0.588235" />
+                            <point x="0.5" y="0.647059" />
+                            <point x="0.147059" y="0.852941" />
+                            <point x="0.441176" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProjImage2" sid="536315710108644">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="246637636272149">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="532397868582363">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="571520216675511">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="557674294132983" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.352941" y="0.352941" />
+                            <point x="0.5" y="0.117647" />
+                            <point x="0.647059" y="0.352941" />
+                            <point x="0.882353" y="0.5" />
+                            <point x="0.647059" y="0.647059" />
+                            <point x="0.5" y="0.911765" />
+                            <point x="0.352941" y="0.647059" />
+                            <point x="0.0882353" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.5" y="0.441176" />
+                            <point x="0.882353" y="0.117647" />
+                            <point x="0.588235" y="0.588235" />
+                            <point x="0.5" y="0.647059" />
+                            <point x="0.147059" y="0.852941" />
+                            <point x="0.441176" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Hand" sid="163497752747189">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="248412782335750">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="484862409067265" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.128906" y="0.226563" />
+                            <point x="0.863281" y="0.226563" />
+                            <point x="0.535156" y="0.96875" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Boomerang" sid="668738889199731">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="goTo" sid="230273149340853" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Sine" sid="461098407682590">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="579365742359473">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="986916813013480">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="209692110306670" speed="5">
+                    <frame duration="1" hotspotX="0.296875" hotspotY="0.28125" original-source="C:\Users\Korisnik\Desktop 3\Boomerang.png">
+                        <collision-poly>
+                            <point x="0.132813" y="0.144531" />
+                            <point x="1" y="0.15625" />
+                            <point x="0.359375" y="0.375" />
+                            <point x="0.035156" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Target" sid="198221802395586">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="deQuienDepende" sid="532633534804527" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="832096739381479">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="877599379138176" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.54" original-source="C:\Users\Korisnik\Desktop 3\b64.png">
+                        <collision-poly>
+                            <point x="0.2" y="0.18" />
+                            <point x="0.83" y="0.18" />
+                            <point x="0.84" y="0.81" />
+                            <point x="0.19" y="0.81" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Moustros_Die" sid="661642407024244">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Moustros" plugin-id="Sprite" sid="983378605728915">
+            <members>
+                <member>murcielago</member>
+                <member>shasky</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="direccion" sid="910556700855299" type="number" />
+                <instance-variable name="seMuevePorPath" sid="750077073079395" type="boolean" />
+                <instance-variable name="Vida" sid="692540345713661" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="546699178529023">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="332227489069656">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="ObjEscenarios" plugin-id="Sprite" sid="692748104905151">
+            <members>
+                <member>arbol</member>
+                <member>fuenteFlotante</member>
+                <member>granRoca</member>
+                <member>hongo</member>
+                <member>tronco</member>
+            </members>
+        </family>
+        <family name="Proyectiles_Personaje" plugin-id="Sprite" sid="998521286165240">
+            <members>
+                <member>Boomerang</member>
+                <member>ProjImage</member>
+                <member>ProjImage2</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="danioProduce" sid="448483690875055" type="number" />
+            </instance-variables>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Menu.xml</layout>
+        <layout>Inicio.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="Habilidades">
+            <event-sheet>Boomerang.xml</event-sheet>
+            <event-sheet>Shuriken.xml</event-sheet>
+            <event-sheet>Multi_Shuriken.xml</event-sheet>
+        </event-folder>
+        <event-sheet>Inicio.xml</event-sheet>
+        <event-sheet>CreacionesBlock.xml</event-sheet>
+        <event-sheet>controles.xml</event-sheet>
+        <event-sheet>AI_Patrullar.xml</event-sheet>
+        <event-sheet>Sombra.xml</event-sheet>
+        <event-sheet>crecimientoPlantas.xml</event-sheet>
+        <event-sheet>FPS.xml</event-sheet>
+        <event-sheet>AI_SeguirPJ.xml</event-sheet>
+        <event-sheet>Huevos_Buscar.xml</event-sheet>
+        <event-sheet>lineasSuelo.xml</event-sheet>
+        <event-sheet>Personaje.xml</event-sheet>
+        <event-sheet>copiaHuevos_buscar.xml</event-sheet>
+        <event-sheet>NPC.xml</event-sheet>
+        <event-sheet>Menu.xml</event-sheet>
+        <event-sheet>Disparos.xml</event-sheet>
+        <event-sheet>System_Habilidades.xml</event-sheet>
+        <event-sheet>Personaje_Mouse.xml</event-sheet>
+        <event-sheet>Invocar.xml</event-sheet>
+        <event-sheet>Moustros_Default.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="25" />
+        <global-instance type="Notifications" uid="35">
+            <properties>
+                <position>bottom-right</position>
+                <fade-in-speed>medium</fade-in-speed>
+                <fade-out-speed>medium</fade-out-speed>
+                <time>5000</time>
+                <max-number>0</max-number>
+                <default-options></default-options>
+                <sticky>true</sticky>
+                <style>Dark</style>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="58" />
+        <global-instance type="Mouse" uid="80" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="loading-logo.png" />
+            <file name="icon32.png" />
+            <file name="icon16.png" />
+            <file name="icon114.png" />
+            <file name="icon128.png" />
+            <file name="icon256.png" />
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+        </file-folder>
+        <file-folder name="Spriter animations">
+            <file name="tolmik.scml" />
+        </file-folder>
+        <file name="MV_boli.ttf" />
+        <file name="mv_boli-webfont.woff" />
+        <file name="mv_boli-webfont.woff2" />
+        <file name="boli.css" />
+    </files-folder>
+</c2project>

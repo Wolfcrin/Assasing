@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CreacionesBlock</name>
+    <events>
+        <event-block sid="528708742853802">
+            <conditions>
+                <condition id="-18" name="On created" sid="239308352523362" type="granRoca" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="784314334705153" type="granRoca">
+                    <param id="0" name="Object">blockRoca</param>
+                    <param id="1" name="Layer">self.LayerNumber</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="560428023927243">
+            <conditions>
+                <condition id="-18" name="On created" sid="521398426501852" type="tronco" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="696662412970438" type="tronco">
+                    <param id="0" name="Object">blockTronco</param>
+                    <param id="1" name="Layer">self.LayerNumber</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="487152553524034">
+            <conditions>
+                <condition id="-18" name="On created" sid="103903210180650" type="arbol" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="641909992429550" type="arbol">
+                    <param id="0" name="Object">blockArbol</param>
+                    <param id="1" name="Layer">self.LayerNumber</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

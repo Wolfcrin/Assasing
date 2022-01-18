@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sombra</name>
+    <events>
+        <event-block sid="402239742405156">
+            <conditions>
+                <condition id="-18" name="On created" sid="569107522920075" type="fuenteFlotante" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="317997846181272" type="fuenteFlotante">
+                    <param id="0" name="Object">sombre</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="544546315693918" type="sombre">
+                    <param id="0" name="X">fuenteFlotante.X</param>
+                    <param id="1" name="Y">fuenteFlotante.Y+200</param>
+                </action>
+                <action id="-10" name="Set value" sid="458713879146311" type="sombre">
+                    <param id="0" name="Instance variable">uidPadre</param>
+                    <param id="1" name="Value">fuenteFlotante.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="140510905757324">
+            <conditions>
+                <condition id="-11" name="For Each" sid="598315343823150" type="System">
+                    <param id="0" name="Object">sombre</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="226218493620592">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="413626334984312" type="fuenteFlotante">
+                            <param id="0" name="Unique ID">sombre.uidPadre</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="224968803897390" type="sombre">
+                            <param id="0" name="X">fuenteFlotante.X </param>
+                            <param id="1" name="Y">sombre.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

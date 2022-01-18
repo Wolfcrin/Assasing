@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Shuriken</name>
+    <events>
+        <event-block sid="209093060625927">
+            <conditions>
+                <condition id="0" name="On function" sid="137810958418320" type="Function">
+                    <param id="0" name="Name">&quot;Shuriken&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="800424235171785" type="System">
+                    <param id="0" name="Object to create">Proj</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">personaje.ImagePointX(1)</param>
+                    <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                </action>
+                <action id="-3" name="Create object" sid="138458698732062" type="System">
+                    <param id="0" name="Object to create">ProjImage</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">personaje.ImagePointX(1)</param>
+                    <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                </action>
+                <action id="-3" name="Create object" sid="612512812081153" type="System">
+                    <param id="0" name="Object to create">Particles</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">personaje.ImagePointX(1)</param>
+                    <param id="3" name="Y">personaje.ImagePointY(1)</param>
+                </action>
+                <action id="-10" name="Set value" sid="367294147334714" type="Proj">
+                    <param id="0" name="Instance variable">UID_Particle</param>
+                    <param id="1" name="Value">Particles.UID</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="620329041258771" type="ProjImage">
+                    <param id="0" name="Pin to">Proj</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="364232278160036" type="ProjImage">
+                    <param id="0" name="Frame number">SkillButton.AnimationFrame</param>
+                </action>
+                <action id="-8" name="Set angle" sid="545133296882102" type="Proj">
+                    <param id="0" name="Angle">angle(personaje.ImagePointX(2),personaje.ImagePointY(2),mouse.X,mouse.Y)</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="133457240197304" type="Particles">
+                    <param id="0" name="Object">ProjImage</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="636046713849696" type="Particles">
+                    <param id="0" name="Pin to">ProjImage</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="957709902717287">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="231379046848818" type="Proj" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="341094823671559" type="Particles" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

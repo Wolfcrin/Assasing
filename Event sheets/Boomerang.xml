@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Boomerang</name>
+    <events>
+        <event-block disabled="1" sid="212856606239783">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="518846161898610" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="966595555582079" type="Target" />
+                <action id="-15" name="Set visible" sid="374490992024968" type="Hand">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="117722413669906" type="Hand">
+                    <param id="0" name="Object">personaje</param>
+                    <param id="1" name="Image point (optional)">3</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="423888097930170" type="Hand">
+                    <param id="0" name="Pin to">personaje</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="468416837425778" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Value">&quot;Hand&quot;</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="206110363585880" type="Boomerang">
+                    <param id="0" name="Object">Hand</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="971215024526722" type="Boomerang">
+                    <param id="0" name="Pin to">personaje</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="891832093246953" type="Boomerang">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="281981374119407">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="814714854231817" type="Boomerang">
+                    <param id="0" name="Object">Hand</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="927720738230480" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Hand&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="236532217555807" type="Boomerang">
+                    <param id="0" name="Object">Hand</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="817761318071851" type="Boomerang">
+                    <param id="0" name="Pin to">personaje</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="810996735318140" type="Boomerang">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="717380520538111" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Value">&quot;stayHere&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="375311859351704">
+            <conditions>
+                <condition id="0" name="On click" sid="349213826412251" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="483031849986243" type="Boomerang">
+                    <param id="0" name="Object">Hand</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="517199390708429" type="System">
+                    <param id="0" name="Object to create">Target</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Mouse.X</param>
+                    <param id="3" name="Y">Mouse.Y</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" sid="711313888762379" type="Boomerang" />
+                <action behavior="Bullet" id="5" name="Set enabled" sid="668944476606332" type="Boomerang">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="390428011359972" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Value">&quot;Target&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="995868675356269">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="362665665017319" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Target&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="645546829093516" type="Boomerang">
+                    <param id="0" name="Angle">angle(Boomerang.X,Boomerang.Y,Target.X,Target.Y)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="322014680120298" type="Boomerang">
+                    <param id="0" name="Angle">Boomerang.Angle+10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="713988454286747">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="774199684959301" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Hand&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="525912476132168" type="Boomerang">
+                    <param id="0" name="Angle">angle(Boomerang.X,Boomerang.Y,Hand.X,Hand.Y)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="857638798539455" type="Boomerang">
+                    <param id="0" name="Angle">Boomerang.Angle+10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="330351419577221">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="674670124060476" type="Boomerang">
+                    <param id="0" name="Object">Target</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="424120336407255" type="Target" />
+                <action id="-10" name="Set value" sid="573426168904231" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Value">&quot;Hand&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="121184299317524">
+            <conditions>
+                <condition id="0" name="On function" sid="262355822286450" type="Function">
+                    <param id="0" name="Name">&quot;Boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="542364258541856">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="770408775132683" type="Boomerang">
+                            <param id="0" name="Object">Hand</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="128241415455595" type="System">
+                            <param id="0" name="Object to create">Target</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">Mouse.X</param>
+                            <param id="3" name="Y">Mouse.Y</param>
+                        </action>
+                        <action behavior="Pin" id="1" name="Unpin" sid="169065034363018" type="Boomerang" />
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="557809468027940" type="Boomerang">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="515276462539383" type="Boomerang">
+                            <param id="0" name="Instance variable">goTo</param>
+                            <param id="1" name="Value">&quot;Target&quot;</param>
+                        </action>
+                        <action id="2" name="Add simple notification" sid="543639524939072" type="Notifications">
+                            <param id="0" name="Title">&quot;&quot;</param>
+                            <param id="1" name="Text">&quot;Inicialice&quot;</param>
+                            <param id="2" name="Image">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="261209157795824">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="236873836508579" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="810353616022950">
+            <conditions>
+                <condition id="0" name="On function" sid="998431674422474" type="Function">
+                    <param id="0" name="Name">&quot;Inicializador_Boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="338273541451839">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="855983678305348" type="Boomerang">
+                            <param id="0" name="Instance variable">goTo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="874491100550846" type="Target" />
+                        <action id="-15" name="Set visible" sid="471533953655751" type="Hand">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="872912702025594" type="Hand">
+                            <param id="0" name="Object">personaje</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="194554111695879" type="Hand">
+                            <param id="0" name="Pin to">personaje</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="565495107333084" type="Boomerang">
+                            <param id="0" name="Instance variable">goTo</param>
+                            <param id="1" name="Value">&quot;Hand&quot;</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="202310642303389" type="Boomerang">
+                            <param id="0" name="Object">Hand</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="225699661046712" type="Boomerang">
+                            <param id="0" name="Pin to">personaje</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="656346228669682" type="Boomerang">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="2" name="Add simple notification" sid="534663867220911" type="Notifications">
+                            <param id="0" name="Title">&quot;&quot;</param>
+                            <param id="1" name="Text">&quot;Inicialice&quot;</param>
+                            <param id="2" name="Image">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="627280759372306" type="Boomerang">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="124237298046811">
+            <conditions>
+                <condition id="0" name="On function" sid="479209280792344" type="Function">
+                    <param id="0" name="Name">&quot;Destructor_Boomerang&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="212781748422158" type="Target" />
+                <action id="-15" name="Set visible" sid="162819139235613" type="Hand">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="391170625720701" type="Hand">
+                    <param id="0" name="X">LayoutWidth +200</param>
+                    <param id="1" name="Y">LayoutHeight +200</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" sid="321514119489104" type="Hand" />
+                <action id="-10" name="Set value" sid="213103569681109" type="Boomerang">
+                    <param id="0" name="Instance variable">goTo</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="513473820086394" type="Boomerang">
+                    <param id="0" name="X">LayoutWidth + 200</param>
+                    <param id="1" name="Y">LayoutHeight + 200</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" sid="346821626580056" type="Boomerang" />
+                <action behavior="Bullet" id="5" name="Set enabled" sid="829601042325939" type="Boomerang">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="2" name="Add simple notification" sid="602380970266284" type="Notifications">
+                    <param id="0" name="Title">&quot;&quot;</param>
+                    <param id="1" name="Text">&quot;destructor&quot;</param>
+                    <param id="2" name="Image">&quot;&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="701596865939351" type="Boomerang">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

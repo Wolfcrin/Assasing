@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Personaje_Mouse</name>
+    <events>
+        <variable constant="0" name="Key_Precionada" sid="210769602220430" static="0" type="number">0</variable>
+        <event-block sid="363719835582564">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="371592353864042" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="680201717731631" type="personaje">
+                    <param id="0" name="Obstacle">blockArbol</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="651528388341703" type="personaje">
+                    <param id="0" name="Obstacle">blockTronco</param>
+                </action>
+                <action behavior="Pathfinding" id="5" name="Add obstacle" sid="941290272952061" type="personaje">
+                    <param id="0" name="Obstacle">blockRoca</param>
+                </action>
+                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="832090277815853" type="personaje" />
+            </actions>
+        </event-block>
+        <event-block sid="190583430624353">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="951568257820326" type="System">
+                    <param id="0" name="Variable">Key_Precionada</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="589052649906776">
+                    <conditions>
+                        <condition id="0" name="On click" sid="601175416396014" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="716889161073348" type="personaje">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="564023976009059">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="418165727733425" type="personaje" />
+                    </conditions>
+                    <actions>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="913040792527137" type="personaje">
+                            <param id="0" name="X">mouse.X</param>
+                            <param id="1" name="Y">mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="292452538865506">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="180095600072399" type="personaje" />
+                    </conditions>
+                    <actions>
+                        <action behavior="MoveTo" id="9" name="Stop" sid="853264764294728" type="personaje" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="627281370655548">
+            <conditions>
+                <condition behavior="MoveTo" id="3" name="Is moving" sid="660249324637177" type="personaje" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="465977363376192">
+                    <conditions>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="234223893575502" type="personaje">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Angle">315</param>
+                        </condition>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="906842593500717" type="personaje">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Angle">45</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="250666723870575" type="personaje">
+                            <param id="0" name="Animation">&quot;caminadoDerecha&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="454945901494586">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="965698865932445" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="219249748735061">
+                    <conditions>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="640616450110971" type="personaje">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Angle">45</param>
+                        </condition>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="615847165373502" type="personaje">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Angle">135</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="985355156336536" type="personaje">
+                            <param id="0" name="Animation">&quot;caminandoFrente&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="246846111753251">
+                    <conditions>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="264730362230120" type="personaje">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Angle">135</param>
+                        </condition>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="134021089228820" type="personaje">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Angle">225</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="727459650113778" type="personaje">
+                            <param id="0" name="Animation">&quot;caminandoIzquierda&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="164598876084651">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="612717156317747" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="142383402899066">
+                    <conditions>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="138733891221255" type="personaje">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Angle">225</param>
+                        </condition>
+                        <condition behavior="MoveTo" id="4" name="Compare moving angle" sid="102817785143659" type="personaje">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Angle">315</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="169765945504018" type="personaje">
+                            <param id="0" name="Animation">&quot;caminandoDetras&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="103646321794501">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="784332488778508" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="846401323960637" type="System">
+                    <param id="0" name="Layout">&quot;menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="483121286789357">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="907990460557693" type="Keyboard">
+                    <param id="0" name="Key">72 (H)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="414103019746434" type="personaje">
+                    <param id="0" name="Instance variable">invisible</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="680222279297301">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="440005465713184" type="personaje">
+                    <param id="0" name="Instance variable">invisible</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="986025206266283" type="personaje">
+                    <param id="0" name="Opacity">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="730971703481923">
+            <conditions>
+                <condition id="-22" name="Else" sid="912705345782575" type="System" />
+                <condition id="-8" name="Is boolean instance variable set" sid="816295637844293" type="Colision">
+                    <param id="0" name="Instance variable">puedeColisionar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="538872817233226" type="personaje">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="329408448504727">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="565100763471893" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="365070174934303" type="System">
+                    <param id="0" name="Variable">Key_Precionada</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="418749724805022">
+            <conditions>
+                <condition id="7" name="On any key released" sid="810705786618505" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="987012189827726" type="System">
+                    <param id="0" name="Variable">Key_Precionada</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
